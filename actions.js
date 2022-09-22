@@ -1,5 +1,14 @@
+
 export const handlePrivateMessage = (message, io) => {
-    const json = JSON.parse(message);
-    const { id, message } = json;
-    io.to(id).emit(message);
+    const { room } = message;
+    io.in(room).emit('message', message);
+};
+
+export const handleJoinToRoom = (message, socket) => {
+    const { room } = message;
+    socket.join(room);
+};
+
+export const handleDisconnect = (id) => {
+    console.log(`User ${id} has been disconected!`);
 };

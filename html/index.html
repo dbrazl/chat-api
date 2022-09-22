@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./socket.io.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="sidebar-item selected">
+                    <p class="username">Freya</p>
+                    <p class="user-id">#354921</p>
+                </div>
+                <div class="sidebar-item">
+                    <p class="username">Thor</p>
+                    <p class="user-id">#487569</p>
+                </div>
+                <div class="sidebar-item">
+                    <p class="username">Odin</p>
+                    <p class="user-id">#142347</p>
+                </div>
+            </div>
+            <form class="chat">
+                <div class="chat-header">
+                    <p class="chat-username">Freya</p>
+                    <p class="chat-user-id">#354921</p>
+                </div>
+                <div class="chat-content">
+                    <p class="message">Olá!</p>
+                    <p class="my-message">E ai!</p>
+                </div>
+                <div class="chat-footer">
+                    <input type="text" class="chat-input" placeholder="Digite uma mensagem">
+                    <button class="send-message-button">Send</button>
+                </div>
+            </form>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
