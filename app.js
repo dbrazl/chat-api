@@ -1,9 +1,11 @@
+import * as dotenv from 'dotenv';
 import express from 'express';
 import HTTP from 'http';
 import { Server } from 'socket.io';
 import { handleDisconnect, handleJoinToRoom, handlePrivateMessage } from './actions';
 import { middlewares } from './middlewares';
 import { routes } from './routes';
+dotenv.config()
 
 const server = express();
 const http = HTTP.createServer(server);
