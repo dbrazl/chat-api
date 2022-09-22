@@ -24,6 +24,13 @@ window.onload = () => {
             item.classList.add('selected');
         }
 
+        // Conect to room
+        const roomID = `${chatUserId.innerHTML}-${USER_ID}`;
+        const joinToRoom = {
+            room: roomID,
+        };
+        socket.emit('joinToRoom', joinToRoom);
+
         // Add messages
         const chatContent = document.querySelector('.chat-content');
         chatContent.innerHTML = messages.map(json => {
