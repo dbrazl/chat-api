@@ -1,6 +1,17 @@
 window.onload = () => {
-    let messages = [];
     const USER_ID = '123456789'
+    let messages = [
+        {
+            room: `#354921-${USER_ID}`,
+            own: false,
+            message: 'Olá!',
+        },
+        {
+            room: `#354921-${USER_ID}`,
+            own: true,
+            message: 'E ai!',
+        }
+    ];
 
     const socket = io('http://localhost:5000/');
 
