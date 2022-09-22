@@ -24,13 +24,6 @@ window.onload = () => {
             item.classList.add('selected');
         }
 
-        // Conect to room
-        const roomID = `${chatUserId.innerHTML}-${USER_ID}`;
-        const joinToRoom = {
-            room: roomID,
-        };
-        socket.emit('joinToRoom', joinToRoom);
-
         // Add messages
         const chatContent = document.querySelector('.chat-content');
         chatContent.innerHTML = messages.map(json => {
@@ -45,6 +38,16 @@ window.onload = () => {
             return null;
         }).filter(item => item).join('');
     }));
+
+    // Conect in all rooms on chat
+    sidebarItems.forEach(item => {
+        const itemId = item.querySelector('.user-id');
+        const roomID = `${itemId.innerHTML}-${USER_ID}`;
+        const joinToRoom = {
+            room: roomID,
+        };
+        socket.emit('joinToRoom', joinToRoom);
+    });
 
     const form = document.querySelector('.chat');
     form.addEventListener('submit', (event) => {
