@@ -13,7 +13,7 @@ window.onload = () => {
         }
     ];
 
-    const socket = io('http://localhost:5000/');
+    const socket = io();
 
     const sidebarItems = document.querySelectorAll('.sidebar-item');
     sidebarItems.forEach(item => item.addEventListener('click', () => {

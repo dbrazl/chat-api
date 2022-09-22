@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "name": "nodejs24042020",
+    "builds": [
+        {"src": "./server.js", "use": "@now/node"},
+        {"src": "/html/index.html", "use": "@now/static"},
+        {"src": "/html/script.js", "use": "@now/static"},
+        {"src": "/html/socket.io.js", "use": "@now/static"},
+        {"src": "/html/style.css", "use": "@now/static"}
+    ],
+    "routes": [
+        {"src": "/style.css", "dest": "/html/style.css" },
+        {"src": "/script.js", "dest": "/html/script.js" },
+        {"src": "/socket.io.js", "dest": "/html/socket.io.js" },
+        {"src": "wss://chat-api-dbrazl.vercel.app/socket.io", "dest": "/html/socket.io.js"},
+        {"src": "/(.*)", "dest": "server.js"}
+    ],
+    "env": {
+        "PORT": "@port"
+    }
+}
